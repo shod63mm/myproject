@@ -30,7 +30,7 @@ Route::get('/counter', Counter::class);
 
 Route::group(['middleware'=>'guest'], function(){
     Route::get('/login', [AuthController::class, 'login'])->name('login');
-    Route::post('/login', [AuthController::class, 'loginPost'])->name('login1');
+    Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
 });
 
 Route::group(['middleware'=>'auth'], function(){
@@ -43,7 +43,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::post('/register', [AuthController::class, 'registerPost'])->name('register1');
 
     Route::get('/userregister', [KlientController::class, 'register'])->name('userregister');
-    Route::post('/userregister', [KlientController::class, 'registerPost'])->name('userregister1');
+    Route::post('/userregister', [KlientController::class, 'registerPost'])->name('userregister');
     Route::get('/klientlist', [KlientController::class, 'klientlist'])->name('klientlist');
     Route::delete('/klientlist/{id}', [KlientController::class, 'klientlistdelete'])->name('klientlist.delete');
 
