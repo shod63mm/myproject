@@ -18,7 +18,7 @@ class KlientController extends Controller
         $klient = Klient::where('phone', $request->phone)->first();
     
         if ($klient) {
-            // Если клиент с таким номером телефона уже существует, обновляем его имя и адрес
+            // Если клиент с таким номером телефона уже существует, обновляем его имя и адрес и телефон
             $klient->name = $request->name;
             $klient->adress = $request->adress;
             $klient->save();

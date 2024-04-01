@@ -44,7 +44,7 @@ class HomeController extends Controller
         ]);
     }
 
-    // Создание нового заказа
+    // Создание нового заказа обновлен
     $order = new Order();
     $order->client_id = $client->id; // Связываем заказ с клиентом
     $order->carpet_quantity = $validatedData['carpet_quantity'];
